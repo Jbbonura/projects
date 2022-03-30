@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Request Info</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-between">
+            <h1>Think the Edema Ruh life for you?</h1>
+            <h5>Fill out the form below to recieve more information</h5>
+          <div>
+            <a href="/" style="margin-right: 25px;">Home</a>
+          </div>
+        </div>
+        <form action="/request_submitted" method="post">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" name="first_name"> 
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" name="last_name"> 
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" class="form-control" name="phone_number"> 
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" name="email"> 
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        {% with messages = get_flashed_messages() %}    
+            {% if messages %}                        
+                {% for message in messages %}     
+                  <p>{{message}}</p>          
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+      </div>
+</body>
+</html>
