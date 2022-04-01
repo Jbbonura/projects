@@ -33,4 +33,8 @@ class Interested_User:
             is_valid = False
         if len(interested_user['phone_number']) < 10:
             flash("Please enter a valid phone number")
+            is_valid = False
+        if len(interested_user['phone_number']) > 14:
+            flash("Please enter a valid phone number")
+            is_valid = False
         return is_valid
